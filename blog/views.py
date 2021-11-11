@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from .models import Post
 
 posts = [
 
@@ -24,7 +25,7 @@ posts = [
 def home(request):
     #we add context and sync it with posts
     context = {
-        'addings': posts,
+        'addings': Post.objects.all(),
             }
     return render(request,'C:/Users/emreb/Documents/djangoyoutubeproject/django_project/blog/templates/blog/home.html',context)#using httpResponse to handle the traffic on home page 
 
