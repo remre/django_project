@@ -27,7 +27,7 @@ def home(request):
     context = {
         'addings': Post.objects.all(),
             }
-    return render(request,'C:/Users/emreb/Documents/djangoyoutubeproject/django_project/blog/templates/blog/home.html',context)#using httpResponse to handle the traffic on home page 
+    return render(request,'C:/Users/emreb/Documents/djangoyoutubeproject/django_project/blog/templates/blog/home.html',context)
 
 def about(request):
     return render(request, 'blog/about.html', {'title':'About'})
