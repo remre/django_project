@@ -48,7 +48,19 @@ class UserPostListView(ListView):
 
     def get_queryset(self):
         user = get_object_or_404(User, username=self.kwargs.get('username'))
-        return Post.objects.filter(author=user).order_by('-date_posted')
+        return Post.objects.filter(author=user).order_by('date_posted')
+        # popular_events = Events.objects.annotate(attendee_count=Count('attendee')).filter(attendee_count__gt=50)
+
+
+
+ # def get_queryset(self):
+    #     person = get_object_or_404(person, username=self.kwargs.get('username'))
+    #     # original qs
+        # qs = super().get_queryset()
+        # filter by a variable captured from url, for example
+        # Salon.objects.filter(author=person).order_by('-date_posted')
+        # qs.filter(name__startswith=self.kwargs['name'])
+
 
     
 
